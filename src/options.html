@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SASS Inspector Options</title>
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<script src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>SASS Inspector Options</h1>
+		<label for="sassInspectorURI">
+			URI scheme for Sass files:
+		</label>
+		<div class="sass-uri-config">
+			<input type="text" id="sassInspectorURI" value="" style="margin-top:10px;" /> 
+			<button type="button" class="btn" id="update">Update</button>
+		</div>
+		<code class="file-uri">://open?url=file:///your/sass/file.scss</code>
+
+		<h3>To integrate with Sublime Text</h3>
+		<p>First you need to create a symlink for ST2 binary:</p>
+		<pre>sudo ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl</pre>
+
+		<p>
+			You also need to have an application called SublHandler. It register a URI scheme handler for txmt:// links in MAC OSX.
+			Download the latest release through this link: 
+			<a href="https://github.com/downloads/asuth/subl-handler/SublHandler.zip">
+				https://github.com/downloads/asuth/subl-handler/SublHandler.zip
+			</a>
+		</p>
+
+		<p>Unzip it, then launch it. Select SublHandler -> Preferences..., then set the path for the subl binary.</p>
+
+		<p>You have to have TextMate and ST2 installed in your MAC OSX computer in order for the integration to work.  You have to reroute the calls from txmt:// links to ST2, because otherwise the links will only open in TextMate. You reroute the link calls through an application called RCDefaultApp. The link is <a href="http://www.rubicode.com/Software/RCDefaultApp/">http://www.rubicode.com/Software/RCDefaultApp/</a>. Once installed you can access your RCDefaultApp through the built in system settings app in MAC OSX. Click on the "URLs" tab and click on the option for txmt links. Select SublHandler and you can test by compile some SASS code with the option of debug info and than just click on a blue link that is along with the CSS properties.</p>
+	</div>
+	<script src="options.js"></script>
+</body>
+</html>

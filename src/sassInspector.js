@@ -23,8 +23,7 @@ var SASSINSPECTOR = (function(){
   SASS_DEBUG_INFO = [];
 
   const
-  TEXTMATE = 'txmt';
-
+  URI = localStorage['sassInspectorUri'] || 'txmt';
 
   /*
   -------------------------------------------------------
@@ -263,7 +262,7 @@ var SASSINSPECTOR = (function(){
       var cssSelector = document.createElement('a');
       cssSelector.className = 'si-file-name';
       cssSelector.innerHTML = sassDebugInfo[i].fileName + ':' + sassDebugInfo[i].lineNumber;
-      cssSelector.href = TEXTMATE + '://open?url=' + sassDebugInfo[i].filePath + '&line=' + sassDebugInfo[i].lineNumber;
+      cssSelector.href = URI + '://open?url=' + sassDebugInfo[i].filePath + '&line=' + sassDebugInfo[i].lineNumber;
       li.appendChild(cssSelector);
 
       // CSS Selector
